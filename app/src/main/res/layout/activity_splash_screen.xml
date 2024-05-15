@@ -4,23 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".SplashScreen">
 
     <ImageView
         android:id="@+id/foodguardLogo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         app:srcCompat="@drawable/foodguard" />
 
     <ProgressBar
-        android:layout_width="40dp"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="225dp"
+        android:layout_marginBottom="250dp"
         android:alpha="0.7" />
 
 
