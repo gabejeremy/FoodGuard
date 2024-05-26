@@ -33,35 +33,35 @@ public class LoginScreen extends AppCompatActivity {
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if() {
-                    Toast.makeText(LoginScreen.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-
-                        mAuth.signInWithEmailAndPassword(em, pass)
-                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                        if (task.isSuccessful()) {
-                                            // Sign in success, update UI with the signed-in user's information
-                                            Toast.makeText(SignUpActivity.this, "Authentication success!.",
-                                                    Toast.LENGTH_SHORT).show();
-                                        } else {
-                                            // If sign in fails, display a message to the user.
-                                            Toast.makeText(SignUpActivity.this, "Authentication failed.",
-                                                    Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-
-                        /*Intent toMain = new Intent(LoginScreen.this, MainActivity.class);
-                        startActivity(toMain);*/
-                } else {
-                    Toast.makeText(LoginScreen.this, "Login Failed!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        loginButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if() {
+//                    Toast.makeText(LoginScreen.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+//
+//                        mAuth.signInWithEmailAndPassword(email, password)
+//                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                                    @Override
+//                                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                                        if (task.isSuccessful()) {
+//                                            // Sign in success, update UI with the signed-in user's information
+//                                            Toast.makeText(SignUpActivity.this, "Authentication success!.",
+//                                                    Toast.LENGTH_SHORT).show();
+//                                        } else {
+//                                            // If sign in fails, display a message to the user.
+//                                            Toast.makeText(SignUpActivity.this, "Authentication failed.",
+//                                                    Toast.LENGTH_SHORT).show();
+//                                        }
+//                                    }
+//                                });
+//
+//                        /*Intent toMain = new Intent(LoginScreen.this, MainActivity.class);
+//                        startActivity(toMain);*/
+//                } else {
+//                    Toast.makeText(LoginScreen.this, "Login Failed!", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
     }
 
     public void openSignUpActivity(View view) {

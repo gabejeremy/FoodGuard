@@ -19,13 +19,13 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_suggested_recipes);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.suggested);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.home:
                     startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                //    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
 
@@ -34,20 +34,20 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
 
                 case R.id.add:
                     startActivity(new Intent(getApplicationContext(), AddIngredientsActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+               //    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
 
                 case R.id.saved:
                     startActivity(new Intent(getApplicationContext(), SavedRecipesActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+              //      overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
 
 
                 case R.id.profile:
                     startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+               //     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
 

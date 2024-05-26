@@ -25,25 +25,25 @@ public class ProfileActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.home:
                     startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                 //   overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
 
                 case R.id.suggested:
                     startActivity(new Intent(getApplicationContext(), SuggestedRecipesActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+               //     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
 
                 case R.id.add:
                     startActivity(new Intent(getApplicationContext(), AddIngredientsActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                 //   overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
 
                 case R.id.saved:
                     startActivity(new Intent(getApplicationContext(), SavedRecipesActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                //    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
 
