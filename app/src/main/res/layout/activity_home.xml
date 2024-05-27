@@ -63,38 +63,22 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            tools:layout_editor_absoluteY="60dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
-                android:gravity="right|center"
-                android:text="Reduce Waste, Save Food"
-                android:textColor="@color/white1"
-                android:textSize="20sp"
-                android:textStyle="bold" />
 
-            <TextView
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="right|center"
-                android:text="Live Sustainably."
-                android:textColor="@color/white1"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_height="220dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="25dp"
                 android:gravity="left"
                 android:text="My Ingredients"
                 android:textColor="@color/purple0"
-                android:textSize="22sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -102,7 +86,49 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
+                <ImageButton
+                    android:id="@+id/btnVeg"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/ingredient_container"
+                    app:srcCompat="@drawable/vegetable"
+                    />
+                <ImageButton
+                    android:id="@+id/btnFruit"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/ingredient_container"
+                    app:srcCompat="@drawable/fruit"
+                    />
 
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnMeat"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/ingredient_container"
+                    app:srcCompat="@drawable/meat"
+                    />
+                <ImageButton
+                    android:id="@+id/btnSauce"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/ingredient_container"
+                    app:srcCompat="@drawable/sauces"
+                    />
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
