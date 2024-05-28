@@ -86,49 +86,107 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/btnVeg"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginTop="20dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/ingredient_container"
-                    app:srcCompat="@drawable/vegetable"
-                    />
-                <ImageButton
-                    android:id="@+id/btnFruit"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/ingredient_container"
-                    app:srcCompat="@drawable/fruit"
-                    />
+                    android:layout_marginStart="40dp">
+                    <ImageButton
+                        android:id="@+id/btnVeg"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/ingredient_container"
+                        app:srcCompat="@drawable/vegetable"
+                        />
 
+                    <TextView
+                        android:id="@+id/txtVeg"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Vegetables" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp">
+
+                    <ImageButton
+                        android:id="@+id/btnFruit"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/ingredient_container"
+                        app:srcCompat="@drawable/fruit"
+                        />
+                    <TextView
+                        android:id="@+id/txtFruit"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Fruits" />
+                </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/btnMeat"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginTop="20dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/ingredient_container"
-                    app:srcCompat="@drawable/meat"
-                    />
-                <ImageButton
-                    android:id="@+id/btnSauce"
+                    android:layout_marginStart="40dp">
+                    <ImageButton
+                        android:id="@+id/btnMeat"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/ingredient_container"
+                        app:srcCompat="@drawable/meat"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtMeat"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Meat" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginTop="20dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/ingredient_container"
-                    app:srcCompat="@drawable/sauces"
-                    />
+                    android:layout_marginStart="30dp">
+
+                    <ImageButton
+                        android:id="@+id/btnSauce"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/ingredient_container"
+                        app:srcCompat="@drawable/sauces"
+                        />
+                    <TextView
+                        android:id="@+id/txtSauce"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Condiments" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
