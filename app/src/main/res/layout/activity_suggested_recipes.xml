@@ -4,8 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white1"
+    android:background="@drawable/suggestedbkg"
     tools:context=".SuggestedRecipesActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/user"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/user5" />
+
+        <TextView
+            android:id="@+id/welcomeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Welcome, User!"
+            android:textColor="@color/white0"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/FGicon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/foodguard_icon" />
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,13 +63,13 @@
         android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/add"
-        android:tint="@color/white0"
-        app:backgroundTint="@color/purple1"
-        app:layout_anchor="@id/bottomAppBar"
-        app:maxImageSize="30dp" />
+        app:backgroundTint="@color/purple1" />
 
     <!-- Bottom App Bar with Bottom Navigation View -->
     <com.google.android.material.bottomappbar.BottomAppBar
