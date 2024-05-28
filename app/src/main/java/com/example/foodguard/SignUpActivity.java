@@ -3,7 +3,6 @@ package com.example.foodguard;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,35 +13,34 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class SignUpActivity extends AppCompatActivity {
 
     EditText username, password, confirmPassword, email;
     Button signupButton;
     FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
         mAuth = FirebaseAuth.getInstance();
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         confirmPassword = findViewById(R.id.confirmPassword);
         email = findViewById(R.id.email);
+        signupButton = findViewById(R.id.signupButton);
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user, pass, conPass, em;
-                user = String.valueOf(username.getText());
-                pass = String.valueOf(password.getText());
-                conPass = String.valueOf(confirmPassword.getText());
-                em = String.valueOf(email.getText());
+                String user = username.getText().toString();
+                String pass = password.getText().toString();
+                String conPass = confirmPassword.getText().toString();
+                String em = email.getText().toString();
 
                 if (TextUtils.isEmpty(user)) {
                     Toast.makeText(SignUpActivity.this, "Enter Username", Toast.LENGTH_SHORT).show();
@@ -64,22 +62,27 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
 
+                if (!pass.equals(conPass)) {
+                    Toast.makeText(SignUpActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 mAuth.createUserWithEmailAndPassword(em, pass)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Toast.makeText(SignUpActivity.this, "Authentication successI.",
+                                    Toast.makeText(SignUpActivity.this, "Authentication success.",
                                             Toast.LENGTH_SHORT).show();
+                                    // Redirect to Login screen or Main Activity
+                                    startActivity(new Intent(SignUpActivity.this, LoginScreen.class));
+                                    finish();
                                 } else {
-                                    // If sign in fails, display a message to the user.
                                     Toast.makeText(SignUpActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
-
             }
         });
     }
