@@ -20,6 +20,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -144,5 +145,4 @@ public class AddIngredientsActivity extends AppCompatActivity {
                 })
                 .addOnFailureListener(e -> Toast.makeText(AddIngredientsActivity.this, "Error saving ingredient", Toast.LENGTH_SHORT).show());
     }
-
 }
