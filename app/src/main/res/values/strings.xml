@@ -9,14 +9,14 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-        <!-- ... -->
-        <string-array name="categories">
-            <item>Veggies</item>
-            <item>Meats</item>
-            <item>Condiments</item>
-            <item>Fruits</item>
-        </string-array>
-        <!-- ... -->
+    <!-- ... -->
+    <string-array name="categories">
+        <item>Veggies</item>
+        <item>Meats</item>
+        <item>Condiments</item>
+        <item>Fruits</item>
+    </string-array>
+    <!-- ... -->
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

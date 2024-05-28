@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.MenuItem;
@@ -18,17 +19,58 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private TextView welcomeTextView;
-    private ImageView userProfileImage;
     private FloatingActionButton fab;
+    private ImageButton btnVeg;
+    private ImageButton btnFruit;
+    private ImageButton btnMeat;
+    private ImageButton btnSauce;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Initialize Views
-        welcomeTextView = findViewById(R.id.welcomeTextView);
+        btnVeg = findViewById(R.id.btnVeg);
+        btnFruit = findViewById(R.id.btnFruit);
+        btnSauce = findViewById(R.id.btnSauce);
+        btnMeat = findViewById(R.id.btnMeat);
+
+        btnVeg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent veg = new Intent(HomeActivity.this, DisplayIngredientsActivity.class);
+                veg.putExtra("category", "Veggies");
+                startActivity(veg);
+            }
+        });
+
+        btnFruit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent fruit = new Intent(HomeActivity.this, DisplayIngredientsActivity.class);
+                fruit.putExtra("category", "Fruits");
+                startActivity(fruit);
+            }
+        });
+
+        btnSauce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sauce = new Intent(HomeActivity.this, DisplayIngredientsActivity.class);
+                sauce.putExtra("category", "Condiments");
+                startActivity(sauce);
+            }
+        });
+
+        btnMeat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent meat = new Intent(HomeActivity.this, DisplayIngredientsActivity.class);
+                meat.putExtra("category", "Meats");
+                startActivity(meat);
+            }
+        });
+
         fab = findViewById(R.id.fab);
 
         // Retrieve the username from SharedPreferences (replace "username_key" with your actual key)
