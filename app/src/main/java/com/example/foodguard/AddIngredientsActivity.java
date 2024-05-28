@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -39,6 +40,12 @@ public class AddIngredientsActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Retrieve ingredient data from EditText fields
+                String name = ingredientName.getText().toString().trim();
+                String date = dateBought.getText().toString().trim();
+                String qty = quantity.getText().toString().trim();
+
+                // Call saveIngredient method with the retrieved data
                 saveIngredient();
             }
         });
@@ -47,10 +54,11 @@ public class AddIngredientsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle FAB click
-                startActivity(new Intent(AddIngredientsActivity.this, AddIngredientsActivity.class));
+                // Handle FAB click by starting DisplayIngredientsActivity
+                showAddIngredientDialog();
             }
         });
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.add);
@@ -83,6 +91,11 @@ public class AddIngredientsActivity extends AppCompatActivity {
         });
     }
 
+    private void showAddIngredientDialog() {
+        Intent intent = new Intent(AddIngredientsActivity.this, DisplayIngredientsActivity.class);
+        startActivity(intent);
+    }
+
     private void saveIngredient() {
         String name = ingredientName.getText().toString().trim();
         String date = dateBought.getText().toString().trim();
@@ -100,7 +113,13 @@ public class AddIngredientsActivity extends AppCompatActivity {
 
         db.collection("ingredients")
                 .add(ingredient)
-                .addOnSuccessListener(documentReference -> Toast.makeText(AddIngredientsActivity.this, "Ingredient saved", Toast.LENGTH_SHORT).show())
+                .addOnSuccessListener(documentReference -> {
+                    Toast.makeText(AddIngredientsActivity.this, "Ingredient saved", Toast.LENGTH_SHORT).show();
+                    // Clear EditText fields after successful save
+                    ingredientName.getText().clear();
+                    dateBought.getText().clear();
+                    quantity.getText().clear();
+                })
                 .addOnFailureListener(e -> Toast.makeText(AddIngredientsActivity.this, "Error saving ingredient", Toast.LENGTH_SHORT).show());
     }
 }
