@@ -49,10 +49,8 @@ public class SuggestedRecipesAdapter extends RecyclerView.Adapter<SuggestedRecip
 
         // Set an onClickListener for the favorite button
         holder.favoriteButton.setOnClickListener(v -> {
-            // Retrieve the recipe name from the TextView associated with this item
-            String recipeName = holder.recipeName.getText().toString();
-            // Now you have the recipe name, you can handle it as needed, such as saving it to favorites
-            saveRecipeToFavorites(recipeName);
+            // Save the recipe to favorites when the favorite button is clicked
+            saveRecipeToFavorites(recipe);
         });
     }
 
@@ -61,7 +59,7 @@ public class SuggestedRecipesAdapter extends RecyclerView.Adapter<SuggestedRecip
         return recipeList.size();
     }
 
-    private void saveRecipeToFavorites(String recipe) {
+    private void saveRecipeToFavorites(Recipe recipe) {
         try {
             // Retrieve the SharedPreferences instance
             SharedPreferences preferences = context.getSharedPreferences("my_preferences", Context.MODE_PRIVATE);
