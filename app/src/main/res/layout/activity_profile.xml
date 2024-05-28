@@ -222,7 +222,6 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--FAB-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -232,7 +231,6 @@
         android:src="@drawable/add"
         app:backgroundTint="@color/purple1" />
 
-    <!-- Bottom App Bar with Bottom Navigation View -->
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
