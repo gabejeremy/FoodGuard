@@ -3,6 +3,7 @@ package com.example.foodguard;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.MenuItem;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -18,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private TextView welcomeTextView;
     private ImageView userProfileImage;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Initialize Views
         welcomeTextView = findViewById(R.id.welcomeTextView);
+        fab = findViewById(R.id.fab);
 
         // Retrieve the username from SharedPreferences (replace "username_key" with your actual key)
         // Save the username to SharedPreferences
@@ -50,6 +54,7 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
                     case R.id.add:
                         startActivity(new Intent(getApplicationContext(), AddIngredientsActivity.class));
+                        //   overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         finish();
                         return true;
                     case R.id.saved:
@@ -62,6 +67,15 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
                 }
                 return false;
+            }
+        });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Start the activity you want to open when the FAB is clicked
+                Intent intent = new Intent(HomeActivity.this, AddIngredientsActivity.class);
+                startActivity(intent);
             }
         });
     }
