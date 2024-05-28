@@ -48,28 +48,22 @@
             app:srcCompat="@drawable/foodguard_icon" />
     </LinearLayout>
 
-
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- RecyclerView for displaying suggested recipes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Suggested Recipes"
-        android:textSize="36sp"
-        android:textColor="@color/purple0"
-        android:layout_gravity="center"/>
+        android:layout_marginTop="185dp"
+        android:layout_marginBottom="90dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_recipe" />
 
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/add"
-        app:backgroundTint="@color/purple1" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
