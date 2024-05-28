@@ -1,58 +1,66 @@
 package com.example.foodguard;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.view.MenuItem;
 
-import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private TextView welcomeTextView;
+    private ImageView userProfileImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // Initialize Views
+        welcomeTextView = findViewById(R.id.welcomeTextView);
+
+        SharedPreferences preferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("username_key", "user");
+        editor.apply();
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.home);
 
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.home:
-                    return true;
-
-                case R.id.suggested:
-                    startActivity(new Intent(getApplicationContext(), SuggestedRecipesActivity.class));
-                //    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-
-                case R.id.add:
-                    startActivity(new Intent(getApplicationContext(), AddIngredientsActivity.class));
-                //    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-
-                case R.id.saved:
-                    startActivity(new Intent(getApplicationContext(), SavedRecipesActivity.class));
-                 //   overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-
-
-                case R.id.profile:
-                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-               //     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        // Current Activity
+                        return true;
+                    case R.id.suggested:
+                        startActivity(new Intent(getApplicationContext(), SuggestedRecipesActivity.class));
+                        finish();
+                        return true;
+                    case R.id.add:
+                        startActivity(new Intent(getApplicationContext(), AddIngredientsActivity.class));
+                        finish();
+                        return true;
+                    case R.id.saved:
+                        startActivity(new Intent(getApplicationContext(), SavedRecipesActivity.class));
+                        finish();
+                        return true;
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        finish();
+                        return true;
+                }
+                return false;
             }
-            return false;
         });
     }
 }

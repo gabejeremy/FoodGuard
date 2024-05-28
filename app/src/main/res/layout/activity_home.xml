@@ -32,14 +32,14 @@
                 android:src="@drawable/user5" />
 
             <TextView
+                android:id="@+id/welcomeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
                 android:text="Welcome, User!"
+                android:textSize="20sp"
                 android:textColor="@color/white0"
-                android:textSize="20sp" />
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"/>
 
             <View
                 android:layout_width="0dp"
