@@ -27,9 +27,11 @@ public class HomeActivity extends AppCompatActivity {
         // Initialize Views
         welcomeTextView = findViewById(R.id.welcomeTextView);
 
+        // Retrieve the username from SharedPreferences (replace "username_key" with your actual key)
+        // Save the username to SharedPreferences
         SharedPreferences preferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("username_key", "user");
+        editor.putString("username_key", "username"); // Replace "YourUsernameHere" with the actual username
         editor.apply();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
