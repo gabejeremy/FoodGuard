@@ -44,7 +44,6 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
         Recipe recipe5 = new Recipe("Sinigang", Arrays.asList("Pork Belly", "Eggplant", "Water Spinach", "Sinigang Mix"), 4.6);
         Recipe recipe6 = new Recipe("Chickaen Wingz", Arrays.asList("Chicken Wings", "Butter", "Garlic Powder", "Salt"), 5.0);
 
-
         // Add the recipes to the list
         recipeList.add(recipe1);
         recipeList.add(recipe2);
