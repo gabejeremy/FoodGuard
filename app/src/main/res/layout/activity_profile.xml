@@ -34,37 +34,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
-            android:id="@+id/btnCancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:background="#00FFFFFF"
-            android:backgroundTint="#00FFA07A"
-            android:text="Cancel"
-            android:textColor="@color/white0"
-            android:textStyle="bold"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btnEdit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:backgroundTint="@color/white0"
-            android:text="Edit"
-            android:textColor="@color/purple1"
-            android:textStyle="bold"
-            app:cornerRadius="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:strokeColor="@color/purple1"
-            app:strokeWidth="0dp" />
-
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
@@ -78,11 +47,11 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/tvName"
+                android:id="@+id/tvProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Name"
+                android:text="Profile"
                 android:textColor="@color/purple0"
                 android:textSize="34sp"
                 android:textStyle="bold" />
@@ -92,29 +61,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Joined on May 27, 2024"
+                android:text="Joined on May 29, 2024"
                 android:textSize="12sp" />
 
-            <EditText
-                android:id="@+id/tvFullName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/rounded_rectangle_text_input_noedit"
-                android:clickable="false"
-                android:cursorVisible="false"
-                android:drawablePadding="16dp"
-                android:focusable="false"
-                android:gravity="center_vertical"
-                android:hint="Full Name"
-                android:inputType="text"
-                android:paddingStart="2dp"
-                android:paddingEnd="16dp"
-                android:textColor="#938F8F"
-                android:textColorHint="#938F8F"
-                app:drawableStartCompat="@drawable/user_rectangle" />
-
-            <EditText
+            <TextView
                 android:id="@+id/tvEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -125,76 +75,89 @@
                 android:drawablePadding="16dp"
                 android:focusable="false"
                 android:gravity="center_vertical"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
                 android:paddingStart="2dp"
                 android:paddingEnd="16dp"
                 android:textColor="#938F8F"
                 android:textColorHint="#938F8F"
                 app:drawableStartCompat="@drawable/email_rectangle" />
 
-            <EditText
-                android:id="@+id/tvLocation"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/rounded_rectangle_text_input_noedit"
-                android:clickable="false"
-                android:cursorVisible="false"
-                android:drawablePadding="16dp"
-                android:focusable="false"
-                android:gravity="center_vertical"
-                android:hint="Location"
-                android:inputType="text"
-                android:paddingStart="2dp"
-                android:paddingEnd="16dp"
-                android:textColor="#938F8F"
-                android:textColorHint="#938F8F"
-                app:drawableStartCompat="@drawable/home_rectangle" />
+                android:text="Reset Password"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/purple0"
+                android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/tvGender"
+                android:id="@+id/oldPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/rounded_rectangle_text_input_noedit"
-                android:clickable="false"
-                android:cursorVisible="false"
                 android:drawablePadding="16dp"
-                android:focusable="false"
                 android:gravity="center_vertical"
-                android:hint="Gender"
-                android:inputType="text"
+                android:hint="Old Password"
+                android:inputType="textPassword"
                 android:paddingStart="2dp"
                 android:paddingEnd="16dp"
                 android:textColor="#938F8F"
-                android:textColorHint="#938F8F"
-                app:drawableStartCompat="@drawable/gender_rectangle" />
+                android:textColorHint="#938F8F" />
 
             <EditText
-                android:id="@+id/tvBirthdate"
+                android:id="@+id/newPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginStart="30dp"
                 android:background="@drawable/rounded_rectangle_text_input_noedit"
-                android:clickable="false"
-                android:cursorVisible="false"
                 android:drawablePadding="16dp"
-                android:focusable="false"
                 android:gravity="center_vertical"
-                android:hint="Birthdate"
-                android:inputType="text|date"
+                android:hint="New Password"
+                android:inputType="textPassword"
                 android:paddingStart="2dp"
                 android:paddingEnd="16dp"
                 android:textColor="#938F8F"
-                android:textColorHint="#938F8F"
-                app:drawableStartCompat="@drawable/birthday_rectangle" />
+                android:textColorHint="#938F8F" />
+
+            <EditText
+                android:id="@+id/confirmNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/rounded_rectangle_text_input_noedit"
+                android:drawablePadding="16dp"
+                android:gravity="center_vertical"
+                android:hint="Confirm New Password"
+                android:inputType="textPassword"
+                android:paddingStart="2dp"
+                android:paddingEnd="16dp"
+                android:textColor="#938F8F"
+                android:textColorHint="#938F8F" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/purple0"
+                android:padding="12dp"
+                android:text="Save"
+                android:textColor="@color/white0"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:cornerRadius="32dp"
+                app:strokeColor="@color/white0"
+                app:strokeWidth="1dp" />
 
             <Button
                 android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/white0"
                 android:padding="12dp"
                 android:text="Logout"
@@ -204,21 +167,6 @@
                 app:cornerRadius="32dp"
                 app:strokeColor="@color/purple0"
                 app:strokeWidth="1dp" />
-
-            <Button
-                android:id="@+id/btnSave"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@color/purple1"
-                android:padding="12dp"
-                android:text="Save"
-                android:textColor="@color/white0"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                app:cornerRadius="32dp" />
-
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

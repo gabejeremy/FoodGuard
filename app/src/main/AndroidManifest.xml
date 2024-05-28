@@ -13,23 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodGuard"
         tools:targetApi="31">
-        <activity
-            android:name=".list.CondimentListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".list.MeatListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".list.FruitsListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".list.VegetableListActivity"
-            android:exported="false" />
+
         <activity
             android:name=".DisplayIngredientsActivity"
             android:exported="false"
             android:label="@string/title_activity_display_ingredients"
-            android:theme="@style/Theme.FoodGuard" />
+            android:theme="@style/Theme.FoodGuard"/>
         <activity
             android:name=".AddIngredientsActivity"
             android:exported="true" />
@@ -44,7 +33,8 @@
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
-            android:exported="true" />
+            android:exported="true"
+            />
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />
