@@ -143,13 +143,13 @@
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/add"
-        android:tint="@color/white0"
-        app:backgroundTint="@color/purple1"
-        app:layout_anchor="@id/bottomAppBar"
-        app:maxImageSize="30dp" />
+        app:backgroundTint="@color/purple1" />
 
     <!-- Bottom App Bar with Bottom Navigation View -->
     <com.google.android.material.bottomappbar.BottomAppBar

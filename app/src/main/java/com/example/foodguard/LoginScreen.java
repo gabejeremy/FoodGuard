@@ -56,7 +56,7 @@ public class LoginScreen extends AppCompatActivity {
                                     Toast.makeText(LoginScreen.this, "Authentication success!",
                                             Toast.LENGTH_SHORT).show();
                                     // Redirect to Main Activity
-                                    startActivity(new Intent(LoginScreen.this, MainActivity.class));
+                                    startActivity(new Intent(LoginScreen.this, HomeActivity.class));
                                     finish();
                                 } else {
                                     Toast.makeText(LoginScreen.this, "Authentication failed.",

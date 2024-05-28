@@ -73,23 +73,16 @@ public class SignUpActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(SignUpActivity.this, "Authentication success.",
-                                            Toast.LENGTH_SHORT).show();
-
-                                    // Gets Username
-                                    SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString("username", user);
-                                    editor.apply();
-
+                                    Toast.makeText(SignUpActivity.this, "Authentication success.", Toast.LENGTH_SHORT).show();
                                     // Redirect to Login screen or Main Activity
                                     startActivity(new Intent(SignUpActivity.this, LoginScreen.class));
                                     finish();
                                 } else {
-                                    Toast.makeText(SignUpActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                                    // If sign in fails, display a message to the user.
+                                    Toast.makeText(SignUpActivity.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
+
                         });
             }
         });
